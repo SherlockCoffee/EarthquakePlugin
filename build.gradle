@@ -1,0 +1,36 @@
+group 'coffee.sherlock'
+version '0.1.0'
+description 'A Bukkit Plugin that provides you to create earthquakes.'
+
+buildscript {
+    ext.kotlin_version = '1.1.2'
+
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'kotlin'
+
+sourceCompatibility = 1.8
+project.ext.fullName = 'EarthquakePlugin'
+project.ext.author = 'SherlockCoffee'
+
+repositories {
+    mavenCentral()
+    maven { url "https://hub.spigotmc.org/nexus/content/repositories/snapshots" }
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
+    compile group: 'org.bukkit', name: 'bukkit', version: '1.12-R0.1-SNAPSHOT'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+processResources {
+    expand(project.properties)
+}

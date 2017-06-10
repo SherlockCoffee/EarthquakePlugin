@@ -1,0 +1,6 @@
+name: ${fullName}
+version: ${version}
+description: ${description}
+
+main: ${group}.${name}.${fullName}
+author: ${author}
