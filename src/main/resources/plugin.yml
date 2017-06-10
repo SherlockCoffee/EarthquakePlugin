@@ -4,3 +4,6 @@ description: ${description}
 
 main: ${group}.${name}.${fullName}
 author: ${author}
+
+commands:
+  earthquake:
