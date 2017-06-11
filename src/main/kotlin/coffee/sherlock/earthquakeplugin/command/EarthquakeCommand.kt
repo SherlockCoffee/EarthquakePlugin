@@ -15,10 +15,10 @@ object EarthquakeCommand : CommandExecutor {
         if (sender!!.hasPermission("earthquake.create")) {
             if (args?.size == 2) {
                 try {
-                    var target: Player = Bukkit.getPlayer(args[0])
-                    var severity: Int = Integer.parseInt(args[1])
+                    val target: Player = Bukkit.getPlayer(args[0])
+                    val severity: Int = Integer.parseInt(args[1])
 
-                    Earthquake(target.location, severity)
+                    Earthquake.create(target.location, severity)
                 } catch (ex: Exception) {
                     sender.sendMessage("${ChatColor.RED} Usage of this command is: /earthquake <target> <severity>")
                 }
